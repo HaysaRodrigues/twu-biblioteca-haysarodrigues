@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.application.BibliotecaApp;
+import com.twu.biblioteca.console.Messages;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,11 +12,11 @@ public class WelcomeMessageTest {
     @Test
     public void validateThat_generateWelcomeMessage_WillReturnAWelcomeMessage() {
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        Messages messages = new Messages();
         String expectedResult = "Welcome To The Bangalore Public Library";
         String actualResult;
 
-        actualResult = bibliotecaApp.showWelcomeMessage();
+        actualResult = messages.showWelcomeMessage();
 
         assertEquals(expectedResult, actualResult);
     }

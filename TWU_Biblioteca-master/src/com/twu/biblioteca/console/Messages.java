@@ -1,11 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.console;
 
-public class BibliotecaApp {
-
-    public static void main(String[] args) {
-
-
-    }
+public class Messages {
 
     public String showWelcomeMessage() {
 

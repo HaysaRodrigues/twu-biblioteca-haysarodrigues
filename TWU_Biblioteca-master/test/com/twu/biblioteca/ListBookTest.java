@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import static org.junit.Assert.assertEquals;
 
+import com.twu.biblioteca.books.BooksManager;
 import org.junit.Test;
 
 import java.util.ArrayList;
