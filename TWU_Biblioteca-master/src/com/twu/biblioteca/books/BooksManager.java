@@ -7,14 +7,13 @@ import java.util.List;
 public class BooksManager {
 
 
-    List<String> booksList = new ArrayList<>();
+    List<Book> booksList = new ArrayList<>();
 
 
-    public List<String> getBooksList() {
+    public List<Book> getBooksList() {
 
-        booksList.add("O Pequeno Príncipe em Cordel");
-        booksList.add("Bichos Vermelhos");
-        booksList.add("O Senhor Agora Vai Mudar de Corpo");
+        booksList.add(new Book("O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+
         return booksList;
     }
 }

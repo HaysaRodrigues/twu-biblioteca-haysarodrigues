@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.application.BibliotecaApp;
 import com.twu.biblioteca.console.Messages;
 import org.junit.Test;
 
