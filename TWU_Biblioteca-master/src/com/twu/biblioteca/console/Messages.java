@@ -4,7 +4,7 @@ public class Messages {
 
     public String showWelcomeMessage() {
 
-        String message = "Welcome To The Bangalore Public Library";
+        String message = "\n ***** Welcome To The Bangalore Public Library ***** \n";
 
         return message;
     }

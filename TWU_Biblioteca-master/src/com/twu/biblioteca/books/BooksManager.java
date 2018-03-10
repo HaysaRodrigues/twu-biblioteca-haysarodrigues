@@ -19,5 +19,20 @@ public class BooksManager {
 
     }
 
+    public void printListOfBookInATable(List<Book> bookList) {
+
+        System.out.println("| Book Name  | Book's Author | Year Published     |");
+
+        for (Book book : bookList) {
+
+            System.out.println(
+                    "| ------------- | ------------- | ------------- |\n" +
+                            "| " + book.getBookName() + " | " + book.getAuthor() + " | " + book.getYearPublished() + " |");
+
+
+        }
+
+    }
+
 
 }
