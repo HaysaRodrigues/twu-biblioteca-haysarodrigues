@@ -37,38 +37,5 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-//    @Override
-//    public boolean equals(Object object) {
-//
-//        boolean isEqual = false;
-//
-//        if (object == this) {
-//
-//            isEqual = true;
-//        }
-//        if (!(object instanceof Book)) {
-//            return false;
-//
-//        }
-//
-//        Book book = (Book) object;
-//
-//        return book.bookName.equals(name);
-//    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//
-//        if (o == this) return true;
-//        if (!(o instanceof User)) {
-//            return false;
-//        }
-//
-//        User user = (User) o;
-//
-//        return user.name.equals(name) &&
-//                user.age == age &&
-//                user.passport.equals(passport);
-//    }
 
 }

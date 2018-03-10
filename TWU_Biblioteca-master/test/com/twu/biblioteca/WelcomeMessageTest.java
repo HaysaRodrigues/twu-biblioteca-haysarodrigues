@@ -12,7 +12,7 @@ public class WelcomeMessageTest {
     public void validateThat_generateWelcomeMessage_WillReturnAWelcomeMessage() {
 
         Messages messages = new Messages();
-        String expectedResult = "Welcome To The Bangalore Public Library";
+        String expectedResult = "\n ***** Welcome To The Bangalore Public Library ***** \n";
         String actualResult;
 
         actualResult = messages.showWelcomeMessage();
