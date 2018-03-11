@@ -12,6 +12,7 @@ Feature: Main menu
     Then I would like to be notified with the message “Select a valid option!”
     And so that I can know when I need to re-enter my choice.
 
+  #OK
   Scenario: Quit
     Given that I'm a customer
     When I choose option Quit

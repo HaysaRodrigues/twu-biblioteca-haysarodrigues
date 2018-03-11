@@ -5,11 +5,13 @@ public class Book {
     String bookName;
     String author;
     String yearPublished;
+    String bookID;
 
-    public Book(String bookName, String author, String yearPublished) {
+    public Book(String bookID, String bookName, String author, String yearPublished) {
         this.bookName = bookName;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.bookID = bookID;
 
     }
 
@@ -36,6 +38,15 @@ public class Book {
     public void setYearPublished(String yearPublished) {
         this.yearPublished = yearPublished;
     }
+
+    public String getBookID() {
+        return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
+    }
+
 
 
 }

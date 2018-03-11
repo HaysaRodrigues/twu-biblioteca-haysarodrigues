@@ -17,8 +17,8 @@ public class ListBookTest {
         BooksManager booksManager = new BooksManager();
         List<Book> expectedListBook = new ArrayList<>();
 
-        expectedListBook.add(new Book("O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("Minha Querida Almofada", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook.add(new Book("2", "Minha Querida Almofada", "Josué Limeira e Vladimir Barros", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 
@@ -33,8 +33,8 @@ public class ListBookTest {
         BooksManager booksManager = new BooksManager();
         List<Book> expectedListBook = new ArrayList<>();
 
-        expectedListBook.add(new Book("O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("Minha Querida Almofada", "Haysa Rodrigues", "2000"));
+        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook.add(new Book("2","Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 
@@ -49,8 +49,8 @@ public class ListBookTest {
         BooksManager booksManager = new BooksManager();
         List<Book> expectedListBook = new ArrayList<>();
 
-        expectedListBook.add(new Book("O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("Minha Querida Almofada", "Haysa Rodrigues", "2000"));
+        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook.add(new Book("2","Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 

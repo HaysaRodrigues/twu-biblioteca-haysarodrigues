@@ -15,4 +15,9 @@ public class MainMenuTest {
 
     }
 
+    @Test
+    public void validateThat_ifInputItsToQuit_TheAppWillQuitFinalizing() {
+
+    }
+
 }

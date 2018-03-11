@@ -7,12 +7,14 @@ import java.util.List;
 public class BooksManager {
 
 
+    List<Book> booksList = new ArrayList<>();
+
+
     public List<Book> getBooksList() {
 
-        List<Book> booksList = new ArrayList<>();
 
-        booksList.add(new Book("O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        booksList.add(new Book("Minha Querida Almofada", "Haysa Rodrigues", "2000"));
+        booksList.add(new Book("10", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        booksList.add(new Book("22", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         return booksList;
 
@@ -35,4 +37,19 @@ public class BooksManager {
     }
 
 
+    public List<Book> checkoutBook(String bookID) {
+
+        booksList = getBooksList();
+
+
+        for (int count = 0; count < booksList.size(); count++) {
+
+            if (booksList.get(count).getBookID() == bookID) {
+                booksList.remove(count);
+            }
+        }
+
+        return booksList;
+
+    }
 }
