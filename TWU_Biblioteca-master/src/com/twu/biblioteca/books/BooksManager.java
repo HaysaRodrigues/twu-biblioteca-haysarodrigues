@@ -50,19 +50,21 @@ public class BooksManager {
 
         for (int count = 0; count < bookListToCheckout.size(); count++) {
 
-            if (bookListToCheckout.get(count).isAvailable()) {
+            if (bookListToCheckout.get(count).getBookID() == bookID) {
 
-                if (bookListToCheckout.get(count).getBookID() == bookID) {
+                if (bookListToCheckout.get(count).isAvailable()) {
                     bookListToCheckout.remove(count);
                     bookListToCheckout = bookListToCheckout;
 
+                    bookListToCheckout.get(count).setAvailable(false);
+
                     message = messages.showCheckoutSuccessMessage();
 
+                } else {
+
+                    message = messages.showCheckoutNotAvailableBook();
                 }
 
-            } else {
-
-                message = messages.showCheckoutNotAvailableBook();
             }
 
 
