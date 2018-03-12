@@ -10,11 +10,16 @@ public class BooksManager {
     List<Book> booksList = new ArrayList<>();
 
 
+    public List<Book> addBookInList(Book book) {
+
+
+        booksList.add(book);
+
+
+        return booksList;
+    }
+
     public List<Book> getBooksList() {
-
-
-        booksList.add(new Book("10", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        booksList.add(new Book("22", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         return booksList;
 
@@ -23,13 +28,13 @@ public class BooksManager {
 
     public void printListOfBookInATable(List<Book> bookList) {
 
-        System.out.println("| Book Name  | Book's Author | Year Published     |");
+        System.out.println(" | ID | Book Name  | Book's Author | Year Published     |");
 
         for (Book book : bookList) {
 
             System.out.println(
-                    "| ------------- | ------------- | ------------- |\n" +
-                            "| " + book.getBookName() + " | " + book.getAuthor() + " | " + book.getYearPublished() + " |");
+                    "| ------ | ------------- | ------------- | ------------- |\n" +
+                            book.getBookID() + " | " + book.getBookName() + " | " + book.getAuthor() + " | " + book.getYearPublished() + " |");
 
 
         }
@@ -38,8 +43,6 @@ public class BooksManager {
 
 
     public List<Book> checkoutBook(String bookID) {
-
-        booksList = getBooksList();
 
 
         for (int count = 0; count < booksList.size(); count++) {

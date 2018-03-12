@@ -14,25 +14,20 @@ public class CheckoutBooksTest {
     public void validateThat_checkoutBooks_WillLetCheckoutABook() {
 
         BooksManager booksManager = new BooksManager();
-        String bookID = "10";
-        List<Book> expectedListAfterCheckout = new ArrayList<>();
-        expectedListAfterCheckout.add(new Book("10", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListAfterCheckout.add(new Book("22", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
+        String bookID = "22";
+        List<Book> expectedListAfterCheckout;
+        expectedListAfterCheckout = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
 
 
         List<Book> actualListOfBooks = booksManager.checkoutBook(bookID);
-        String expectedNextBookName = expectedListAfterCheckout.get(1).getBookID();
+        String expectedNextBookID = expectedListAfterCheckout.get(0).getBookID();
 
 
-        Assert.assertEquals(expectedNextBookName, actualListOfBooks.get(0).getBookID());
-
-    }
-
-
-    @Test
-    public void validateThat_checkoutBooks_WillLetCheckoutABookAndTheBookWillNotAppearAnymoreInTheList() {
+        Assert.assertEquals(expectedNextBookID, actualListOfBooks.get(0).getBookID());
 
     }
+
+
 }
 
 

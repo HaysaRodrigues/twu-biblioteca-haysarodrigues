@@ -15,15 +15,12 @@ public class ListBookTest {
     public void validateThat_ItWillBeAbleToSeeAllBooksList_WithNameBook() {
 
         BooksManager booksManager = new BooksManager();
-        List<Book> expectedListBook = new ArrayList<>();
-
-        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("2", "Minha Querida Almofada", "Josué Limeira e Vladimir Barros", "2000"));
+        List<Book> expectedListBook;
+        expectedListBook = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 
         assertEquals(expectedListBook.get(0).getBookName(), actualResult.get(0).getBookName());
-        assertEquals(expectedListBook.get(1).getBookName(), actualResult.get(1).getBookName());
 
     }
 
@@ -31,10 +28,10 @@ public class ListBookTest {
     public void validateThat_ItWillBeAbleToSeeAllBooksList_WithAuthorName() {
 
         BooksManager booksManager = new BooksManager();
-        List<Book> expectedListBook = new ArrayList<>();
+        List<Book> expectedListBook;
+        booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook = booksManager.addBookInList(new Book("2", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
-        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("2","Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 
@@ -47,10 +44,10 @@ public class ListBookTest {
     public void validateThat_ItWillBeAbleToSeeAllBooksList_WithYearPublished() {
 
         BooksManager booksManager = new BooksManager();
-        List<Book> expectedListBook = new ArrayList<>();
+        List<Book> expectedListBook;
+        booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+        expectedListBook = booksManager.addBookInList(new Book("2", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
-        expectedListBook.add(new Book("1","O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
-        expectedListBook.add(new Book("2","Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
         List<Book> actualResult = booksManager.getBooksList();
 
@@ -58,4 +55,21 @@ public class ListBookTest {
         assertEquals(expectedListBook.get(1).getYearPublished(), actualResult.get(1).getYearPublished());
 
     }
+
+    @Test
+    public void validateThat_addBookInList_willReturnAListOfBooksThatItWasAdd() {
+
+        BooksManager booksManager = new BooksManager();
+        List<Book> actualResultList;
+        List<Book> expectedResultList = new ArrayList<>();
+        expectedResultList.add(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+
+        actualResultList = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+
+        assertEquals(expectedResultList.size(), actualResultList.size());
+
+
+    }
+
+
 }

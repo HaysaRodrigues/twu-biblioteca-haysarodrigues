@@ -14,8 +14,9 @@ public class MainMenu {
         Messages messages = new Messages();
         System.out.println(messages.showWelcomeMessage());
 
-        List<Book> bookList;
         BooksManager booksManager = new BooksManager();
+        List<Book> bookList = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
+
         Scanner scan = new Scanner(System.in);
 
         int selection = 0;
@@ -24,7 +25,8 @@ public class MainMenu {
 
             System.out.println(" \n Main Menu ");
             System.out.println("  [1] - List Books");
-            System.out.println("  [2] - Quit");
+            System.out.println("  [2] - Checkout Book");
+            System.out.println("  [3] - Quit");
 
             System.out.println("\n Insert number option: \n");
             selection = scan.nextInt();
@@ -35,9 +37,19 @@ public class MainMenu {
                     System.out.println("\n List of Available Books \n");
                     bookList = booksManager.getBooksList();
                     booksManager.printListOfBookInATable(bookList);
+
                     break;
 
                 case 2:
+                    Scanner scanBookID = new Scanner(System.in);
+                    System.out.println("\n Insert ID book to checkout:  \n");
+                    String bookID = scanBookID.next();
+                    bookList = booksManager.checkoutBook(bookID);
+                    System.out.println("\n Thank you! Enjoy the book. \n");
+
+                    break;
+
+                case 3:
                     System.out.println(" ------ By By ------");
                     break;
 
@@ -46,7 +58,7 @@ public class MainMenu {
                     break;
             }
 
-        } while (selection != 2);
+        } while (selection != 3);
 
     }
 
