@@ -3,6 +3,7 @@ package com.twu.biblioteca.books;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class BooksManager {
 
@@ -42,14 +43,26 @@ public class BooksManager {
     }
 
 
-    public List<Book> checkoutBook(String bookID) {
+    public List<Book> checkoutBook(String bookID, String answer) {
+
+//        Scanner yesOrNot = new Scanner(System.in);
+//        System.out.println("\n Do you want to checkout a book? Y/N \n");
+//        answer = yesOrNot.next();
 
 
-        for (int count = 0; count < booksList.size(); count++) {
+        if (answer == "Y") {
 
-            if (booksList.get(count).getBookID() == bookID) {
-                booksList.remove(count);
+            for (int count = 0; count < booksList.size(); count++) {
+
+                if (booksList.get(count).getBookID() == bookID) {
+                    booksList.remove(count);
+                    booksList = booksList;
+                }
             }
+
+        } else {
+
+            System.out.println("\n Ok! ");
         }
 
         return booksList;

@@ -25,8 +25,7 @@ public class MainMenu {
 
             System.out.println(" \n Main Menu ");
             System.out.println("  [1] - List Books");
-            System.out.println("  [2] - Checkout Book");
-            System.out.println("  [3] - Quit");
+            System.out.println("  [2] - Quit");
 
             System.out.println("\n Insert number option: \n");
             selection = scan.nextInt();
@@ -44,7 +43,7 @@ public class MainMenu {
                     Scanner scanBookID = new Scanner(System.in);
                     System.out.println("\n Insert ID book to checkout:  \n");
                     String bookID = scanBookID.next();
-                    bookList = booksManager.checkoutBook(bookID);
+                    bookList = booksManager.checkoutBook(bookID, "N");
                     System.out.println("\n Thank you! Enjoy the book. \n");
 
                     break;
@@ -58,7 +57,7 @@ public class MainMenu {
                     break;
             }
 
-        } while (selection != 3);
+        } while (selection != 2);
 
     }
 
