@@ -44,12 +44,7 @@ public class BooksManager {
 
 
     public List<Book> checkoutBook(String bookID, String answer) {
-
-//        Scanner yesOrNot = new Scanner(System.in);
-//        System.out.println("\n Do you want to checkout a book? Y/N \n");
-//        answer = yesOrNot.next();
-
-
+        
         if (answer == "Y") {
 
             for (int count = 0; count < booksList.size(); count++) {

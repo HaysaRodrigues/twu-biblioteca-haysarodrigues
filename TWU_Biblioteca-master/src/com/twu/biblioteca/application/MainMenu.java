@@ -15,9 +15,16 @@ public class MainMenu {
         System.out.println(messages.showWelcomeMessage());
 
         BooksManager booksManager = new BooksManager();
-        List<Book> bookList = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
 
-        Scanner scan = new Scanner(System.in);
+        List<Book> bookList;
+        bookList = booksManager.addBookInList(new Book("18", "The Handmaid's Tale ", "Girl", "2000"));
+        bookList = booksManager.addBookInList(new Book("98", "The Bell Jar ", "Girl", "2000"));
+        bookList = booksManager.addBookInList(new Book("45", "Jane Eyre", "Girl", "2000"));
+        bookList = booksManager.addBookInList(new Book("10", "The Second Sex ", "Girl", "2000"));
+
+        Scanner menuNumberFromUser = new Scanner(System.in);
+        Scanner bookIDFromUser = new Scanner(System.in);
+        Scanner yesOrNot = new Scanner(System.in);
 
         int selection = 0;
 
@@ -28,7 +35,7 @@ public class MainMenu {
             System.out.println("  [2] - Quit");
 
             System.out.println("\n Insert number option: \n");
-            selection = scan.nextInt();
+            selection = menuNumberFromUser.nextInt();
 
             switch (selection) {
 
@@ -36,19 +43,16 @@ public class MainMenu {
                     System.out.println("\n List of Available Books \n");
                     bookList = booksManager.getBooksList();
                     booksManager.printListOfBookInATable(bookList);
+                    System.out.println("\n Do you want to checkout a book? Y/N \n");
+                    String answerYorN = yesOrNot.next();
+                    System.out.println("\n What book ID do you want do check-out: \n");
+                    String bookIDToCheckout = bookIDFromUser.next();
+
+                    booksManager.checkoutBook(bookIDToCheckout, answerYorN);
 
                     break;
 
                 case 2:
-                    Scanner scanBookID = new Scanner(System.in);
-                    System.out.println("\n Insert ID book to checkout:  \n");
-                    String bookID = scanBookID.next();
-                    bookList = booksManager.checkoutBook(bookID, "N");
-                    System.out.println("\n Thank you! Enjoy the book. \n");
-
-                    break;
-
-                case 3:
                     System.out.println(" ------ By By ------");
                     break;
 

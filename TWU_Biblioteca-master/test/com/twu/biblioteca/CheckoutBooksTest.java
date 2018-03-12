@@ -10,7 +10,7 @@ import java.util.List;
 public class CheckoutBooksTest {
 
     @Test
-    public void validateThat_checkoutBooks_WillLetCheckoutABook() {
+    public void validateThat_checkoutBook_WillRemoveTheBookAfterCheckoutFromTheList() {
 
         BooksManager booksManager = new BooksManager();
         String removedBookID = "13";
@@ -27,6 +27,12 @@ public class CheckoutBooksTest {
 
 
         Assert.assertEquals(expectedNextBookID, leftBookID);
+
+    }
+
+
+    @Test
+    public void validateThat_checkoutBook_WillReturnArrayIndexOfBounds_IfTryToCheckoutAnInvalidBookID() {
 
     }
 
