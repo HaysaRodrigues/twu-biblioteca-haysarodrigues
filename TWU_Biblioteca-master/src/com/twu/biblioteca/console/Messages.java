@@ -8,4 +8,11 @@ public class Messages {
 
         return message;
     }
+
+    public String showCheckoutSuccessMessage() {
+
+        String message = "***** Thank you! Enjoy the book. *****";
+
+        return message;
+    }
 }

@@ -18,7 +18,7 @@ public class ListBookTest {
         List<Book> expectedListBook;
         expectedListBook = booksManager.addBookInList(new Book("1", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000"));
 
-        List<Book> actualResult = booksManager.getBooksList();
+        List<Book> actualResult = booksManager.getBookListToCheckout();
 
         assertEquals(expectedListBook.get(0).getBookName(), actualResult.get(0).getBookName());
 
@@ -33,7 +33,7 @@ public class ListBookTest {
         expectedListBook = booksManager.addBookInList(new Book("2", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
 
-        List<Book> actualResult = booksManager.getBooksList();
+        List<Book> actualResult = booksManager.getBookListToCheckout();
 
         assertEquals(expectedListBook.get(0).getAuthor(), actualResult.get(0).getAuthor());
         assertEquals(expectedListBook.get(1).getAuthor(), actualResult.get(1).getAuthor());
@@ -49,7 +49,7 @@ public class ListBookTest {
         expectedListBook = booksManager.addBookInList(new Book("2", "Minha Querida Almofada", "Haysa Rodrigues", "2000"));
 
 
-        List<Book> actualResult = booksManager.getBooksList();
+        List<Book> actualResult = booksManager.getBookListToCheckout();
 
         assertEquals(expectedListBook.get(0).getYearPublished(), actualResult.get(0).getYearPublished());
         assertEquals(expectedListBook.get(1).getYearPublished(), actualResult.get(1).getYearPublished());
