@@ -65,6 +65,9 @@ public class BooksManager {
                     message = messages.showCheckoutNotAvailableBook();
                 }
 
+            } else {
+
+                message = messages.showCheckoutNotAvailableBook();
             }
 
 

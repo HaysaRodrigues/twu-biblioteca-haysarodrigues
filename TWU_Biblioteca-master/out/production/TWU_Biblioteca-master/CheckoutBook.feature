@@ -10,6 +10,7 @@ Feature: Checkout Book
     Given That I am a customer
     Then I would like to know that a book has been checked out by seeing the message “Thank you! Enjoy the book”.
 
+  #OK
   Scenario: Unsuccessful Checkout
     Given I'm a customer
     When I tried to check-out a book that is not available

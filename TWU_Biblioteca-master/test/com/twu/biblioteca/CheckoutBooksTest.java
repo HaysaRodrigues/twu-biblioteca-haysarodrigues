@@ -39,6 +39,7 @@ public class CheckoutBooksTest {
     @Test
     public void validateThat_checkoutBookWontDelete_IfTryToCheckoutAnInvalidBookID() {
 
+        Messages messages = new Messages();
         BooksManager booksManager = new BooksManager();
         String removedBookID = "8";
         List<Book> listBeforeCheckout;
@@ -48,10 +49,11 @@ public class CheckoutBooksTest {
         listBeforeCheckout = booksManager.addBookInList(new Book("13", "O Pequeno Príncipe em Cordel", "Josué Limeira e Vladimir Barros", "2000", false));
 
 
-        booksManager.checkoutBook(removedBookID);
+        String expectedMessage = booksManager.checkoutBook(removedBookID);
         boolean actualNextBookID = listBeforeCheckout.get(1).getBookID() == "8";
 
         Assert.assertEquals(false, actualNextBookID);
+        Assert.assertEquals(expectedMessage, messages.showCheckoutNotAvailableBook());
 
     }
 
