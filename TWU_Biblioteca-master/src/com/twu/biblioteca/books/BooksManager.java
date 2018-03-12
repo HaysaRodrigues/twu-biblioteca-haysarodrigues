@@ -44,21 +44,31 @@ public class BooksManager {
     }
 
 
-    public List<Book> checkoutBook(String bookID) {
+    public String checkoutBook(String bookID) {
 
+        String message = "";
 
         for (int count = 0; count < bookListToCheckout.size(); count++) {
 
-            if (bookListToCheckout.get(count).getBookID() == bookID) {
-                bookListToCheckout.remove(count);
-                bookListToCheckout = bookListToCheckout;
+            if (bookListToCheckout.get(count).isAvailable()) {
 
-                System.out.println(messages.showCheckoutSuccessMessage());
+                if (bookListToCheckout.get(count).getBookID() == bookID) {
+                    bookListToCheckout.remove(count);
+                    bookListToCheckout = bookListToCheckout;
 
+                    message = messages.showCheckoutSuccessMessage();
+
+                }
+
+            } else {
+
+                message = messages.showCheckoutNotAvailableBook();
             }
+
+
         }
 
-        return bookListToCheckout;
+        return message;
 
     }
 

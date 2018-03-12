@@ -15,4 +15,11 @@ public class Messages {
 
         return message;
     }
+
+    public String showCheckoutNotAvailableBook() {
+
+        String message = "***** (!) That book is not available (!) *****";
+
+        return message;
+    }
 }

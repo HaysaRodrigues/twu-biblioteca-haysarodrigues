@@ -7,11 +7,14 @@ public class Book {
     String yearPublished;
     String bookID;
 
-    public Book(String bookID, String bookName, String author, String yearPublished) {
+    boolean isAvailable;
+
+    public Book(String bookID, String bookName, String author, String yearPublished, boolean isAvailable) {
         this.bookName = bookName;
         this.author = author;
         this.yearPublished = yearPublished;
         this.bookID = bookID;
+        this.isAvailable = isAvailable;
 
     }
 
@@ -47,6 +50,13 @@ public class Book {
         this.bookID = bookID;
     }
 
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
 
 
 }
