@@ -2,9 +2,10 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.books.Book;
 import com.twu.biblioteca.books.BooksManager;
+import com.twu.biblioteca.console.Messages;
+import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReturnBookTests {
@@ -21,23 +22,58 @@ public class ReturnBookTests {
         listOfAvailableBooks = booksManager.addBookInList(new Book("18", "The Handmaid's Tale ", "Girl", "2000", true));
         listOfAvailableBooks = booksManager.addBookInList(new Book("23", "The Handmaid's Tale ", "Girl", "1999", true));
         listOfAvailableBooks = booksManager.addBookInList(new Book("67", "The Handmaid's Tale ", "Girl", "1934", true));
-        listOfAvailableBooks = booksManager.addBookInList(new Book("90", "The Handmaid's Tale ", "Girl", "1887", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("90", "The Handmaid's Tale ", "Girl", "1887", false));
 
-        System.out.println(listOfAvailableBooks.size());
-
-        listOfUnavailableBooks = booksManager.checkoutBook(bookIDToCheckout);
-
+        booksManager.checkoutBook(bookIDToCheckout);
         booksManager.returnBookToTheLibrary(bookIDToReturn);
+
+        Assert.assertEquals(0, booksManager.getUnavailableBookList().size());
 
     }
 
     @Test
     public void validateThat_ItWillReturnASuccessMessage_WhenTheBookReturnedBelongsToTheLibrary() {
 
+        Messages messages = new Messages();
+        BooksManager booksManager = new BooksManager();
+        List<Book> listOfAvailableBooks;
+
+        String bookIDToCheckout = "23";
+        String bookIDToReturn = "23";
+
+        listOfAvailableBooks = booksManager.addBookInList(new Book("18", "The Handmaid's Tale ", "Girl", "2000", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("23", "The Handmaid's Tale ", "Girl", "1999", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("67", "The Handmaid's Tale ", "Girl", "1934", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("90", "The Handmaid's Tale ", "Girl", "1887", false));
+
+        booksManager.checkoutBook(bookIDToCheckout);
+        String actualSuccessMessage = booksManager.returnBookToTheLibrary(bookIDToReturn);
+
+        Assert.assertEquals(messages.showReturnSuccessMessage(), actualSuccessMessage);
+
+
     }
 
     @Test
     public void validateThat_ItWillReturnAnUnsuccessfulMessage_WhenTheBookDoNotBelongsToTheLibrary() {
+
+        Messages messages = new Messages();
+        BooksManager booksManager = new BooksManager();
+        List<Book> listOfAvailableBooks;
+
+        String bookIDToCheckout = "23";
+        String bookIDToReturn = "23";
+
+        listOfAvailableBooks = booksManager.addBookInList(new Book("18", "The Handmaid's Tale ", "Girl", "2000", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("23", "The Handmaid's Tale ", "Girl", "1999", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("67", "The Handmaid's Tale ", "Girl", "1934", true));
+        listOfAvailableBooks = booksManager.addBookInList(new Book("90", "The Handmaid's Tale ", "Girl", "1887", false));
+
+        booksManager.checkoutBook(bookIDToCheckout);
+        String actualUnsuccessfulMessage = booksManager.returnBookToTheLibrary(bookIDToReturn);
+
+        Assert.assertEquals(messages.showReturnUnsuccessfulMessage(), actualUnsuccessfulMessage);
+
 
     }
 }

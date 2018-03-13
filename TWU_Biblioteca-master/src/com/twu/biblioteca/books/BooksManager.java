@@ -10,6 +10,7 @@ public class BooksManager {
 
     Messages messages = new Messages();
     List<Book> bookListToCheckout = new ArrayList<>();
+    List<Book> unavailableBookList = new ArrayList<>();
 
 
     public List<Book> addBookInList(Book book) {
@@ -21,11 +22,21 @@ public class BooksManager {
         return bookListToCheckout;
     }
 
+    public List<Book> addBookInUnavailableBookList(Book book) {
+
+        unavailableBookList.add(book);
+
+        return unavailableBookList;
+    }
+
+
     public List<Book> getBookListToCheckout() {
 
         return bookListToCheckout;
+    }
 
-
+    public List<Book> getUnavailableBookList() {
+        return unavailableBookList;
     }
 
     public void printListOfBookInATable(List<Book> bookList) {
@@ -53,10 +64,11 @@ public class BooksManager {
             if (bookListToCheckout.get(count).getBookID() == bookID) {
 
                 if (bookListToCheckout.get(count).isAvailable()) {
+
+                    addBookInUnavailableBookList(bookListToCheckout.get(count));
+
                     bookListToCheckout.remove(count);
                     bookListToCheckout = bookListToCheckout;
-
-                    bookListToCheckout.get(count).setAvailable(false);
 
                     message = messages.showCheckoutSuccessMessage();
 
@@ -78,4 +90,28 @@ public class BooksManager {
     }
 
 
+    public String returnBookToTheLibrary(String bookIDToReturn) {
+
+        String message = "";
+
+        for (int count = 0; count < unavailableBookList.size(); count++) {
+
+            if (unavailableBookList.get(count).getBookID() == bookIDToReturn) {
+
+                addBookInList(unavailableBookList.get(count));
+
+                unavailableBookList.remove(count);
+
+                unavailableBookList = unavailableBookList;
+
+                message = "";
+            } else {
+
+                message = ;
+            }
+        }
+
+
+        return message;
+    }
 }
