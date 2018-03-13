@@ -12,7 +12,7 @@ Feature: Return Book
     And I would like to be notified if the book I am returning belongs to this library by seeing the message:
     Then “Thank you for returning the book.”, so that I know I returned the book to the right library.
 
-
+  #OK
   Scenario: Unsuccessful Return
     Given I am a customer
     And I would like to be notified if the book I am returning has not been added to this library by seeing the message:
