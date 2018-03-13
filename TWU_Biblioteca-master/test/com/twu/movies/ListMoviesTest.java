@@ -8,10 +8,12 @@ import org.junit.Test;
 public class ListMoviesTest {
 
     Movie movie;
+    Movie movieWithoutRating;
 
     @Before
     public void setup() {
         movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
+        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha");
     }
 
     @Test
@@ -21,7 +23,6 @@ public class ListMoviesTest {
         String actualMovieName = movie.getMovieName();
 
         Assert.assertEquals(expectedMovieName, actualMovieName);
-
 
     }
 
@@ -58,6 +59,7 @@ public class ListMoviesTest {
 
     @Test
     public void validateThat_movieDetails_canBeReturnedWithoutRating() {
+        Assert.assertEquals(0, movieWithoutRating.getMovieRating());
 
     }
 

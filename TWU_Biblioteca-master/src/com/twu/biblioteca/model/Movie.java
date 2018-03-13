@@ -2,10 +2,10 @@ package com.twu.biblioteca.model;
 
 public class Movie {
 
-    String movieName;
-    int movieYear;
-    String movieDirector;
-    int movieRating;
+    private String movieName;
+    private int movieYear;
+    private String movieDirector;
+    private int movieRating;
 
     public Movie(String movieName, int movieYear, String movieDirector, int movieRating) {
 
@@ -13,6 +13,13 @@ public class Movie {
         this.movieYear = movieYear;
         this.movieDirector = movieDirector;
         this.movieRating = movieRating;
+    }
+
+    public Movie(String movieName, int movieYear, String movieDirector) {
+
+        this.movieName = movieName;
+        this.movieYear = movieYear;
+        this.movieDirector = movieDirector;
     }
 
 
