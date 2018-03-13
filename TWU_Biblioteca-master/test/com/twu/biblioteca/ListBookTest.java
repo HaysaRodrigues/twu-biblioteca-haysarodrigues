@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import static org.junit.Assert.assertEquals;
 
 import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.BooksManager;
+import com.twu.biblioteca.manager.BooksManager;
 import org.junit.Test;
 
 import java.util.ArrayList;

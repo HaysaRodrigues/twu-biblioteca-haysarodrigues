@@ -1,5 +1,6 @@
 package com.twu.movies;
 
+import com.twu.biblioteca.manager.MoviesManager;
 import com.twu.biblioteca.model.Movie;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,32 +11,27 @@ import java.util.List;
 public class ListMoviesTest {
 
     MoviesManager moviesManager;
-    Movie movie;
+    Movie movieWithRating;
     Movie movieWithoutRating;
-    List<Movie> movieAvailableList;
 
     @Before
     public void setup() {
 
         moviesManager = new MoviesManager();
 
-        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
-        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha");
-        movieAvailableList.add(movie);
-        movieAvailableList.add(movieWithoutRating);
+        movieWithRating = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
+        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", false);
+        moviesManager.addMovieInMovieAvailableList(movieWithRating);
+        moviesManager.addMovieInMovieAvailableList(movieWithoutRating);
+
     }
 
     @Test
     public void validateThat_itWillAppear_availableMovieList() {
 
+        List<Movie> actualMovieList = moviesManager.listAvailableMovies();
 
-        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
-
-
-        List<Movie> actualMovieList = moviesManager.getMovieAvailableList();
-
-        Assert.assertEquals(movieAvailableList.size(), actualMovieList.size());
-
+        Assert.assertEquals(1, actualMovieList.size());
 
     }
 }

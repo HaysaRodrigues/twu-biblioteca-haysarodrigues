@@ -6,22 +6,25 @@ public class Movie {
     private int movieYear;
     private String movieDirector;
     private int movieRating;
+    private boolean isAvailable = true;
 
-    public Movie(String movieName, int movieYear, String movieDirector, int movieRating) {
+    public Movie(String movieName, int movieYear, String movieDirector, int movieRating, boolean isAvailable) {
 
         this.movieName = movieName;
         this.movieYear = movieYear;
         this.movieDirector = movieDirector;
         this.movieRating = movieRating;
+        this.isAvailable = isAvailable;
     }
 
-    public Movie(String movieName, int movieYear, String movieDirector) {
+    public Movie(String movieName, int movieYear, String movieDirector, boolean isAvailable) {
 
         this.movieName = movieName;
         this.movieYear = movieYear;
         this.movieDirector = movieDirector;
-    }
+        this.isAvailable = isAvailable;
 
+    }
 
     public String getMovieName() {
         return movieName;
@@ -53,6 +56,14 @@ public class Movie {
 
     public void setMovieRating(int movieRating) {
         this.movieRating = movieRating;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
 

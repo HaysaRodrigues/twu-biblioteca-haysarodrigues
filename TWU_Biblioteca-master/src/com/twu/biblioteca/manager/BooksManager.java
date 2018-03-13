@@ -1,7 +1,8 @@
-package com.twu.biblioteca.model;
+package com.twu.biblioteca.manager;
 
 
 import com.twu.biblioteca.console.Messages;
+import com.twu.biblioteca.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;

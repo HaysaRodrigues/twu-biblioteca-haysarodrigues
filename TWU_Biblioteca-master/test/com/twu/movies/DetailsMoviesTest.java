@@ -12,8 +12,8 @@ public class DetailsMoviesTest {
 
     @Before
     public void setup() {
-        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
-        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha");
+        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
+        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", true);
     }
 
     @Test
@@ -49,6 +49,14 @@ public class DetailsMoviesTest {
     @Test
     public void validateThat_movieDetails_willHaveMovieRating() {
 
+        int expectedMovieDirector = 8;
+        int actualMovieName = movie.getMovieRating();
+
+        Assert.assertEquals(expectedMovieDirector, actualMovieName);
+    }
+
+    @Test
+    public void validateThat_movieDetails_willHaveAisAvailable() {
 
         int expectedMovieDirector = 8;
         int actualMovieName = movie.getMovieRating();
