@@ -1,4 +1,4 @@
-package com.twu.biblioteca.books;
+package com.twu.biblioteca.model;
 
 public class Book {
 

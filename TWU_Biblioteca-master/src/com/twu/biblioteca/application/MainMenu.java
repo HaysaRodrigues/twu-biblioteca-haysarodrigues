@@ -1,7 +1,7 @@
 package com.twu.biblioteca.application;
 
-import com.twu.biblioteca.books.Book;
-import com.twu.biblioteca.books.BooksManager;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.BooksManager;
 import com.twu.biblioteca.console.Messages;
 
 import java.util.List;

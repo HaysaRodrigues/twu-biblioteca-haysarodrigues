@@ -1,4 +1,4 @@
-package com.twu.biblioteca.books;
+package com.twu.biblioteca.model;
 
 
 import com.twu.biblioteca.console.Messages;
