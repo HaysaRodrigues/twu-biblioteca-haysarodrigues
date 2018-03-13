@@ -5,63 +5,37 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class ListMoviesTest {
 
+    MoviesManager moviesManager;
     Movie movie;
     Movie movieWithoutRating;
+    List<Movie> movieAvailableList;
 
     @Before
     public void setup() {
+
+        moviesManager = new MoviesManager();
+
         movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
         movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha");
+        movieAvailableList.add(movie);
+        movieAvailableList.add(movieWithoutRating);
     }
 
     @Test
-    public void validateThat_movieDetails_willHaveMovieName() {
+    public void validateThat_itWillAppear_availableMovieList() {
 
-        String expectedMovieName = "Um amor para recordar";
-        String actualMovieName = movie.getMovieName();
 
-        Assert.assertEquals(expectedMovieName, actualMovieName);
+        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8);
+
+
+        List<Movie> actualMovieList = moviesManager.getMovieAvailableList();
+
+        Assert.assertEquals(movieAvailableList.size(), actualMovieList.size());
+
 
     }
-
-    @Test
-    public void validateThat_movieDetails_willHaveMovieYear() {
-
-        int expectedMovieYear = 2000;
-        int actualMovieName = movie.getMovieYear();
-
-        Assert.assertEquals(expectedMovieYear, actualMovieName);
-
-    }
-
-    @Test
-    public void validateThat_movieDetails_willHaveMovieDirector() {
-
-        String expectedMovieDirector = "Chiquinha";
-        String actualMovieName = movie.getMovieDirector();
-
-        Assert.assertEquals(expectedMovieDirector, actualMovieName);
-
-    }
-
-    @Test
-    public void validateThat_movieDetails_willHaveMovieRating() {
-
-
-        int expectedMovieDirector = 8;
-        int actualMovieName = movie.getMovieRating();
-
-        Assert.assertEquals(expectedMovieDirector, actualMovieName);
-    }
-
-
-    @Test
-    public void validateThat_movieDetails_canBeReturnedWithoutRating() {
-        Assert.assertEquals(0, movieWithoutRating.getMovieRating());
-
-    }
-
-
 }
