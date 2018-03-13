@@ -61,7 +61,7 @@ public class BooksManager {
 
         for (int count = 0; count < bookListToCheckout.size(); count++) {
 
-            if (bookListToCheckout.get(count).getBookID() == bookID) {
+            if (bookListToCheckout.get(count).getBookID().equals(bookID)) {
 
                 if (bookListToCheckout.get(count).isAvailable()) {
 
@@ -72,12 +72,9 @@ public class BooksManager {
 
                     message = messages.showCheckoutSuccessMessage();
 
-                } else {
-
-                    message = messages.showCheckoutNotAvailableBook();
                 }
 
-            } else {
+            } else if (bookListToCheckout.get(count).getBookID().equals(bookID) == false) {
 
                 message = messages.showCheckoutNotAvailableBook();
             }
@@ -96,7 +93,7 @@ public class BooksManager {
 
         for (int count = 0; count < unavailableBookList.size(); count++) {
 
-            if (unavailableBookList.get(count).getBookID() == bookIDToReturn) {
+            if (unavailableBookList.get(count).getBookID().equals(bookIDToReturn)) {
 
                 addBookInList(unavailableBookList.get(count));
 
