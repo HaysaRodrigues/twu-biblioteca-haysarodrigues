@@ -20,7 +20,7 @@ public class ListMoviesTest {
         moviesManager = new MoviesManager();
 
         movieWithRating = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
-        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", false);
+        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", true);
         moviesManager.addMovieInMovieAvailableList(movieWithRating);
         moviesManager.addMovieInMovieAvailableList(movieWithoutRating);
 
@@ -29,6 +29,16 @@ public class ListMoviesTest {
     @Test
     public void validateThat_itWillAppear_availableMovieList() {
 
+        List<Movie> actualMovieList = moviesManager.listAvailableMovies();
+
+        Assert.assertEquals(2, actualMovieList.size());
+
+    }
+
+    @Test
+    public void validateThat_itWillNotAppear_unavailableMovieList() {
+
+        movieWithoutRating.setAvailable(false);
         List<Movie> actualMovieList = moviesManager.listAvailableMovies();
 
         Assert.assertEquals(1, actualMovieList.size());
