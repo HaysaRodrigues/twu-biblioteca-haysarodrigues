@@ -22,4 +22,18 @@ public class Messages {
 
         return message;
     }
+
+    public String showReturnBookSuccessMessage() {
+
+        String message = "Thank you for returning the book.";
+
+        return message;
+    }
+
+    public String showReturnBookUnsuccessfulMessage() {
+
+        String message = "(!) That is not a valid book. (!)";
+
+        return message;
+    }
 }

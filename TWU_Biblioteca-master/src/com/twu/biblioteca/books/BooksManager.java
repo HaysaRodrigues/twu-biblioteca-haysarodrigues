@@ -104,10 +104,11 @@ public class BooksManager {
 
                 unavailableBookList = unavailableBookList;
 
-                message = "";
+                message = messages.showReturnBookSuccessMessage();
+
             } else {
 
-                message = ;
+                message = messages.showReturnBookUnsuccessfulMessage();
             }
         }
 

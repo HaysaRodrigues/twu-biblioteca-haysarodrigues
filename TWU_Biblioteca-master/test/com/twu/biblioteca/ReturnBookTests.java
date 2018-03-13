@@ -49,7 +49,7 @@ public class ReturnBookTests {
         booksManager.checkoutBook(bookIDToCheckout);
         String actualSuccessMessage = booksManager.returnBookToTheLibrary(bookIDToReturn);
 
-        Assert.assertEquals(messages.showReturnSuccessMessage(), actualSuccessMessage);
+        Assert.assertEquals(messages.showReturnBookSuccessMessage(), actualSuccessMessage);
 
 
     }
@@ -62,7 +62,7 @@ public class ReturnBookTests {
         List<Book> listOfAvailableBooks;
 
         String bookIDToCheckout = "23";
-        String bookIDToReturn = "23";
+        String bookIDToReturn = "12";
 
         listOfAvailableBooks = booksManager.addBookInList(new Book("18", "The Handmaid's Tale ", "Girl", "2000", true));
         listOfAvailableBooks = booksManager.addBookInList(new Book("23", "The Handmaid's Tale ", "Girl", "1999", true));
@@ -72,7 +72,7 @@ public class ReturnBookTests {
         booksManager.checkoutBook(bookIDToCheckout);
         String actualUnsuccessfulMessage = booksManager.returnBookToTheLibrary(bookIDToReturn);
 
-        Assert.assertEquals(messages.showReturnUnsuccessfulMessage(), actualUnsuccessfulMessage);
+        Assert.assertEquals(messages.showReturnBookUnsuccessfulMessage(), actualUnsuccessfulMessage);
 
 
     }
