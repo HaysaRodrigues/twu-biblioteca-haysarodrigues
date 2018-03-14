@@ -21,4 +21,9 @@ public class MoviesManager {
     public List<Movie> listAvailableMovies() {
         return getMovieAvailableList().stream().filter(movie -> movie.isAvailable()).collect(Collectors.toList());
     }
+
+    public static String formatListWithHeader() {
+        return String.format("%-20s %-20s %-20s %-20s %n", "Movie Name", "Movie Director", "Movie Year", "Movie Rating");
+
+    }
 }

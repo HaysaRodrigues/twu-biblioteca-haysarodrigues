@@ -82,7 +82,7 @@ public class DetailsMoviesTest {
 
     @Test
     public void validateThat_movieDetailsList_willBeFormattedWithHeader() {
-        String header = "Movie Name            Movie Year                 Rating                    \n";
+        String header = "Movie Name           Movie Director       Movie Year           Movie Rating         \n";
         Assert.assertEquals(header, MoviesManager.formatListWithHeader());
 
     }

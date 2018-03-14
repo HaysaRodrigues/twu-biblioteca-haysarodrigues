@@ -2,10 +2,10 @@ package com.twu.biblioteca.model;
 
 public class Book {
 
-    String bookName;
-    String author;
-    String yearPublished;
-    String bookID;
+    private String bookName;
+    private String author;
+    private String yearPublished;
+    private String bookID;
 
     boolean isAvailable;
 
