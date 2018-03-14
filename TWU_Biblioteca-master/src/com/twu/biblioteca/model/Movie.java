@@ -66,5 +66,9 @@ public class Movie {
         isAvailable = available;
     }
 
+    public String details() {
+        return String.format("%-20s %-20s %-20s %-20s %n", movieName, movieDirector, movieYear, movieRating);
+    }
+
 
 }

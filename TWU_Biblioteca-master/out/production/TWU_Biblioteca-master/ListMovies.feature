@@ -1,5 +1,6 @@
 Feature: List Movies
 
+  #OK
   Scenario: List Movies
     Given that I'm a customer
     Then I would like to see a list of available movies

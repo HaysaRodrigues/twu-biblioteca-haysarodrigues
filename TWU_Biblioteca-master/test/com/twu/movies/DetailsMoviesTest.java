@@ -71,5 +71,12 @@ public class DetailsMoviesTest {
 
     }
 
+    @Test
+    public void validateThat_movieDetails_WillBeFormattedInLine() {
+
+        String expectedFormat = "Um amor para recordar Chiquinha            2000                 8                    \n";
+        Assert.assertEquals(expectedFormat, movie.details());
+    }
+
 
 }
