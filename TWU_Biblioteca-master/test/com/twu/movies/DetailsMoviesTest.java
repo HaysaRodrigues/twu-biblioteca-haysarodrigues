@@ -1,5 +1,6 @@
 package com.twu.movies;
 
+import com.twu.biblioteca.manager.MoviesManager;
 import com.twu.biblioteca.model.Movie;
 import org.junit.Assert;
 import org.junit.Before;
@@ -76,6 +77,14 @@ public class DetailsMoviesTest {
 
         String expectedFormat = "Um amor para recordar Chiquinha            2000                 8                    \n";
         Assert.assertEquals(expectedFormat, movie.details());
+    }
+
+
+    @Test
+    public void validateThat_movieDetailsList_willBeFormattedWithHeader() {
+        String header = "Movie Name            Movie Year                 Rating                    \n";
+        Assert.assertEquals(header, MoviesManager.formatListWithHeader());
+
     }
 
 
