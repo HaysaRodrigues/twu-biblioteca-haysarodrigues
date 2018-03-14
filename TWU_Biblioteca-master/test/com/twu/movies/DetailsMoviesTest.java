@@ -13,8 +13,8 @@ public class DetailsMoviesTest {
 
     @Before
     public void setup() {
-        movie = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
-        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", true);
+        movie = new Movie(1, "Um amor para recordar", 2000, "Chiquinha", 8, true);
+        movieWithoutRating = new Movie(2, "Um amor para recordar", 2000, "Chiquinha", true);
     }
 
     @Test

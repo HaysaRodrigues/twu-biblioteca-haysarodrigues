@@ -33,7 +33,8 @@ public class MainMenu {
             System.out.println("  [1] - List Books");
             System.out.println("  [2] - Checkout Book");
             System.out.println("  [3] - Return Book");
-            System.out.println("  [4] - Quit");
+            System.out.println("  [4] - Checkout Movie");
+            System.out.println("  [5] - Quit");
 
             System.out.println("\n Insert number option: \n");
             selection = menuNumberFromUser.nextInt();
@@ -62,6 +63,10 @@ public class MainMenu {
                     break;
 
                 case 4:
+                    //TODO Checkout Movie
+                    break;
+
+                case 5:
                     System.out.println(" ------ By By ------");
                     break;
 
@@ -70,7 +75,7 @@ public class MainMenu {
                     break;
             }
 
-        } while (selection != 4);
+        } while (selection != 5);
 
     }
 }

@@ -2,14 +2,16 @@ package com.twu.biblioteca.model;
 
 public class Movie {
 
+    private int movieID;
     private String movieName;
     private int movieYear;
     private String movieDirector;
     private int movieRating;
     private boolean isAvailable = true;
 
-    public Movie(String movieName, int movieYear, String movieDirector, int movieRating, boolean isAvailable) {
+    public Movie(int movieID, String movieName, int movieYear, String movieDirector, int movieRating, boolean isAvailable) {
 
+        this.movieID = movieID;
         this.movieName = movieName;
         this.movieYear = movieYear;
         this.movieDirector = movieDirector;
@@ -17,13 +19,22 @@ public class Movie {
         this.isAvailable = isAvailable;
     }
 
-    public Movie(String movieName, int movieYear, String movieDirector, boolean isAvailable) {
+    public Movie(int movieID, String movieName, int movieYear, String movieDirector, boolean isAvailable) {
 
+        this.movieID = movieID;
         this.movieName = movieName;
         this.movieYear = movieYear;
         this.movieDirector = movieDirector;
         this.isAvailable = isAvailable;
 
+    }
+
+    public int getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(int movieID) {
+        this.movieID = movieID;
     }
 
     public String getMovieName() {

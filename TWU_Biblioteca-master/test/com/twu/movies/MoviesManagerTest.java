@@ -19,8 +19,8 @@ public class MoviesManagerTest {
 
         moviesManager = new MoviesManager();
         moviesManagerEmpty = new MoviesManager();
-        movieWithRating = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
-        movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", true);
+        movieWithRating = new Movie(1, "Um amor para recordar", 2000, "Chiquinha", 8, true);
+        movieWithoutRating = new Movie(2, "Um amor para recordar", 2000, "Chiquinha", true);
         moviesManager.addMovieInMovieAvailableList(movieWithRating);
         moviesManager.addMovieInMovieAvailableList(movieWithoutRating);
 

@@ -53,4 +53,10 @@ public class MoviesManager {
 
     }
 
+    public String checkoutMovie(int movieID) {
+
+        String message = "";
+
+        return message;
+    }
 }

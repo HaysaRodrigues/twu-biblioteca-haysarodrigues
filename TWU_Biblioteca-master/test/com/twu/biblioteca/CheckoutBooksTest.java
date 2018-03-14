@@ -50,7 +50,7 @@ public class CheckoutBooksTest {
 
 
         String expectedMessage = booksManager.checkoutBook(removedBookID);
-        boolean actualNextBookID = listBeforeCheckout.get(1).getBookID() == "8";
+        boolean actualNextBookID = listBeforeCheckout.get(1).getBookID().equals("8");
 
         Assert.assertEquals(false, actualNextBookID);
         Assert.assertEquals(expectedMessage, messages.showCheckoutNotAvailableBook());
