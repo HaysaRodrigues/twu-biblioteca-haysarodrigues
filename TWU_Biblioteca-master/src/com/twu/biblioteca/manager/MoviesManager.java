@@ -38,7 +38,7 @@ public class MoviesManager {
 
         String message = "";
 
-
+//TODO this method could improve because I'll do checkout after, why I am not using it in checkout method?
         if (listAvailableMovies().isEmpty()) {
             message = "There aren't book available.";
         } else if (!listAvailableMovies().isEmpty()) {
@@ -56,6 +56,19 @@ public class MoviesManager {
     public String checkoutMovie(int movieID) {
 
         String message = "";
+
+
+        for (int count = 0; count < listAvailableMovies().size(); count++) {
+
+
+            if (listAvailableMovies().get(count).getMovieID() == movieID) {
+
+                listAvailableMovies().get(count).setAvailable(false);
+
+                message = "Get the popcorn and enjoy the movie.";
+            }
+
+        }
 
         return message;
     }

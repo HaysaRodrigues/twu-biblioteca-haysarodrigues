@@ -55,7 +55,7 @@ public class BooksManager {
 
     }
 
-
+    //TODO refactor duplicated code
     public String checkoutBook(String bookID) {
 
         String message = "";
