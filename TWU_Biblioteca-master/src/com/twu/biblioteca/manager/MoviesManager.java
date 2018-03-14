@@ -26,4 +26,15 @@ public class MoviesManager {
         return String.format("%-20s %-20s %-20s %-20s %n", "Movie Name", "Movie Director", "Movie Year", "Movie Rating");
 
     }
+
+    public String moviesListAvailableFormatted() {
+
+        String message = "";
+
+        if (listAvailableMovies().isEmpty()) {
+            message = "There aren't book available.";
+        }
+        return message;
+
+    }
 }

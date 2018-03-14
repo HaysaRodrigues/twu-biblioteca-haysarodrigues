@@ -10,6 +10,7 @@ public class MoviesManagerTest {
 
 
     MoviesManager moviesManager;
+    MoviesManager moviesManagerEmpty;
     Movie movieWithRating;
     Movie movieWithoutRating;
 
@@ -17,7 +18,7 @@ public class MoviesManagerTest {
     public void setup() {
 
         moviesManager = new MoviesManager();
-
+        moviesManagerEmpty = new MoviesManager();
         movieWithRating = new Movie("Um amor para recordar", 2000, "Chiquinha", 8, true);
         movieWithoutRating = new Movie("Um amor para recordar", 2000, "Chiquinha", true);
         moviesManager.addMovieInMovieAvailableList(movieWithRating);
@@ -36,8 +37,8 @@ public class MoviesManagerTest {
     @Test
     public void validateThat_moviesList_WillThrowMessageWhenThereAreNoMovies() {
 
-        String expectedMessage = "There aren't movies.";
-        Assert.assertEquals(expectedMessage, moviesManager.moviesListAvailableFormatted());
+        String expectedMessage = "There aren't book available.";
+        Assert.assertEquals(expectedMessage, moviesManagerEmpty.moviesListAvailableFormatted());
 
     }
 }
