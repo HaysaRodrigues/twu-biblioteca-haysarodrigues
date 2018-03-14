@@ -29,8 +29,10 @@ public class MoviesManagerTest {
     @Test
     public void validateThat_moviesList_WillBeFormattedAndWillShowMovieList() {
 
-        String expectedList = "";
-        Assert.assertEquals(expectedList, moviesManager.moviesListAvailableFormatted());
+        String header = "Movie Name           Movie Director       Movie Year           Movie Rating         \n";
+        String itemOne = "Um amor para recordar Chiquinha            2000                 0                    \n";
+
+        Assert.assertEquals(header + itemOne, moviesManager.moviesListAvailableFormatted());
 
     }
 
